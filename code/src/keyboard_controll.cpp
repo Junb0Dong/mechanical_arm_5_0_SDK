@@ -68,8 +68,17 @@ int main()
     brake();
 
     // 键盘控制
-    mechanical_arm_origin();
     keyboard_controller();
+    // get current pose
+    // float arr[6];
+    // current_pose(arr);
+    // std::cout << "current pose: [";
+    // for (int i = 0; i < 6; i++)
+    // {
+    //     arr[i] = TH.pos[i];
+    //     std::cout << arr[i] << (i < 5 ? ", " : "");
+    // }
+    // std::cout << "]" << std::endl;
     logout();
     return 0;
 }

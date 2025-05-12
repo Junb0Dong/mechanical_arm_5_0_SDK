@@ -1,6 +1,6 @@
 // build command: g++ -std=c++11 -o robot_server server_main.cpp robot_server.cpp
 
-
+// bais: [171.389, -364.496, 420.007, -0.878895, 1.4993, 0.631517]
 
 #include "robot_server.h"
 
@@ -28,12 +28,34 @@ int main()
     }
 
     string ip = ip_address();
-    cout << "ip=" << endl;
+    cout << "ip="  << ip << endl;
 
     // 连接到设备并enable brake
     signal(SIGINT, signalHandler);
     login();
+
+    // // get current pose
+    // float arr[6];
+    // current_pose(arr);
+    // std::cout << "current pose: [";
+    // for (int i = 0; i < 6; i++)
+    // {
+    //     arr[i] = TH.pos[i];
+    //     std::cout << arr[i] << (i < 5 ? ", " : "");
+    // }
+    // std::cout << "]" << std::endl;
+
     cout << "login success" << endl;
+
+    // 机械臂的初始位置
+    
+    TH.pos[0] = 171.389;
+    TH.pos[1] = -364.496;
+    TH.pos[2] = 420.007;
+    TH.pos[3] = -0.878895;
+    TH.pos[4] = 1.4993;
+    TH.pos[5] = 0.631517;
+    move_to_pos();
     // 初始化接收类
     // RobotCommandReceiver receiver("127.0.0.1", 9000);
     RobotCommandReceiver receiver("10.20.55.106", 9000);
