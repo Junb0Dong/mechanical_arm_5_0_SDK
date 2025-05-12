@@ -1,0 +1,151 @@
+// build command: g++ -std=c++11 -o robot_server server_main.cpp robot_server.cpp
+
+
+
+#include "robot_server.h"
+
+using namespace std;
+
+string filename;
+char device[] = "/dev/ttyUSB0";
+
+int main()
+{
+    // CAN设备序列号查询
+    vector<string> productSerialNumbers = query_can();
+    if (productSerialNumbers.empty())
+    {
+        cout << "未找到任何 USB 设备，请插入设备后重试！" << endl;
+        exit(0);
+    }
+    else
+    {
+        cout << "找到的 CAN 设备序列号：";
+        for (const string &serialNumber : productSerialNumbers)
+        {
+            cout << serialNumber << endl;
+        }
+    }
+
+    string ip = ip_address();
+    cout << "ip=" << endl;
+
+    // 连接到设备并enable brake
+    signal(SIGINT, signalHandler);
+    login();
+    cout << "login success" << endl;
+    // 初始化接收类
+    // RobotCommandReceiver receiver("127.0.0.1", 9000);
+    RobotCommandReceiver receiver("10.20.55.106", 9000);
+    // 启动服务器
+    if (!receiver.start_server())
+    {
+        return 1;
+    }
+
+    // 接受客户端连接
+    int client_socket = receiver.accept_client(); // 接受客户端连接并返回socket描述符
+    if (client_socket < 0)
+    {
+        return 1;
+    }
+
+    // 初始化发送类
+    RobotStateSender sender(client_socket); // 使用接收到的socket描述符初始化发送类
+
+    // 主循环
+    while (true)
+    {
+        // 接收命令
+        json command = receiver.receive_command();
+        if (command.is_null() || command.contains("status") && command["status"] == "error")
+        {
+            break; // 客户端断开或错误
+        }
+
+        // 处理命令
+        if (command.contains("command") && command["command"] == "set_target_pose")
+        {
+            try
+            {
+                auto pose = command["pose"].get<std::vector<double>>();
+                std::cout << "Target pose: [";
+                for (size_t i = 0; i < pose.size(); ++i)
+                {
+                    std::cout << pose[i] << (i < pose.size() - 1 ? ", " : "");
+                    TH.pos[i] = pose[i]; // 更新目标位置
+                }
+                std::cout << "]" << std::endl;
+
+                move_to_pos(); // 调用move_to_pos函数
+                show_value("TH.j= ", TH.j);
+                show_value("pos:", TH.pos);
+
+                // 发送响应
+                json response = {
+                    {"status", "success"},
+                    {"message", "Pose received"}};
+                sender.send_state(response);
+            }
+            catch (const json::exception &e)
+            {
+                json error_response = {
+                    {"status", "error"},
+                    {"message", "Invalid pose data"}};
+                sender.send_state(error_response);
+            }
+        }
+        else if (command.contains("command") && command["command"] == "moveJ")
+        {
+            // 处理moveJ命令
+            try {
+                // 解析 moveJ 参数
+                auto q = command["q"].get<std::vector<double>>();
+                double speed = command["speed"].get<double>();
+                double acceleration = command["acceleration"].get<double>();
+                bool asynchronous = command["asynchronous"].get<bool>();
+
+                // 验证关节数
+                if (q.size() != 6) {
+                    json error_response = {
+                        {"status", "error"},
+                        {"message", "moveJ requires exactly 6 joint positions"}
+                    };
+                    sender.send_state(error_response);
+                    continue;
+                }
+
+                // 调用 moveJ API
+                for (size_t i = 0; i < q.size(); ++i)
+                {
+                    TH.j[i] = q[i]; // 更新目标位置
+                }
+                move_to_joint();
+                show_value("TH.j= ", TH.j);
+                show_value("pos:", TH.pos);
+                std::cout << "]" << std::endl;
+
+                json response = {
+                    {"status","success"},
+                    {"message", "moveJ executed"}
+                };
+                sender.send_state(response);
+            } catch (const json::exception& e) {
+                json error_response = {
+                    {"status", "error"},
+                    {"message", std::string("Invalid moveJ data: ") + e.what()}
+                };
+                sender.send_state(error_response);
+            }
+        }
+        else
+        {
+            json error_response = {
+                {"status", "error"},
+                {"message", "Unknown command"}};
+            sender.send_state(error_response);
+        }
+    }
+
+    return 0;
+}
