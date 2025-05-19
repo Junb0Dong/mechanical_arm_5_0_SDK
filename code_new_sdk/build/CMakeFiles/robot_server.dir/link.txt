@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall CMakeFiles/robot_server.dir/src/server_main.cpp.o CMakeFiles/robot_server.dir/src/robot_server.cpp.o -o robot_server  -lpython3.10 -lcontrolcan -lmylibti5 
