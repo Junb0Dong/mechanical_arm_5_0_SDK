@@ -1,0 +1,4 @@
+#!/bin/bash
+export CPLUS_INCLUDE_PATH=~/mechanical_arm_5_0_SDK/code_new_sdk/include:$CPLUS_INCLUDE_PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/mechanical_arm_5_0_SDK/code_new_sdk/include
+g++ main.cpp -L../include -I/usr/include/python3.10 -lpython3.10  -I /usr/include/eigen3 -lcontrolcan -lmylibti5 -o move_sov
