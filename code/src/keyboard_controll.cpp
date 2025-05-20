@@ -7,7 +7,21 @@
 #include <iostream>
 #include <unistd.h>
 #include <cstdlib>
+#include <vector>
+#include <thread>
+#include <chrono>
+#include <atomic>
+#include <csignal>
 
+#include <Eigen/Core>
+#include <Eigen/Geometry>
+#include <array>
+
+
+
+ 
+
+#include "Ti5CAN_Driver.h"
 #include "Ti5MOVE.h"
 #include "Ti5BASIC.h"
 #include "Ti5LOGIC.h"
@@ -16,25 +30,44 @@
 #include "tool.h"
 #include "clamping_jaw.h"
 #include "drag_drop.h"
+#include "socket_service.h"
+#include "example.h"
+#include "key_event.h"
 
-#include <csignal>
+
+// 定义颜色转义序列
+#define RESET "\033[0m"
+#define RED "\033[31m"     /* Red */
+#define GREEN "\033[32m"   /* Green */
+#define YELLOW "\033[33m"  /* Yellow */
+#define BLUE "\033[34m"    /* Blue */
+#define MAGENTA "\033[35m" /* Magenta */
+#define CYAN "\033[36m"    /* Cyan */
 
 using namespace std;
 
+struct Vec3 {
+    float x, y, z;
+};
+
+struct Pose {
+    Vec3 pos;
+    Vec3 rpy;  // roll, pitch, yaw
+};
+
+
 string filename;
-// string device_485_name;
-char device[] = "/dev/ttyUSB0";
+char device[] = "/dev/ttyUSB0"; 
+std::string ip_test = "192.168.130.11";//socket通信测试参数
+
 
 void signalHandler(int signum)
 {
-
-    char aaa;
     cout << "Interrupt signal (" << signum << ") received.\n";
-
-    brake();
+    brake(0,0);
     cout << "stop!!" << endl;
-    inspect_brake();
-    logout();
+    
+    Exit_Can();
     exit(signum);
 }
 
@@ -54,31 +87,24 @@ int main()
             cout << serialNumber << endl;
         }
     }
-    // string qqq=query_can();
-    // cout<<"qqq="<<qqq<<endl;
-    string ip = ip_address();
-    cout << "ip=" << endl;
 
     // ctrl+c 刹车
     signal(SIGINT, signalHandler);
-    login();
-    cout << "login success" << endl;
-    mechanical_arm_origin();
+
+    Start_Can();
+    cout << "初始化CAN成功" << endl;
+
+    mechanical_arm_origin(0, 0);
     sleep(3);
     brake();
 
     // 键盘控制
-    keyboard_controller();
-    // get current pose
-    // float arr[6];
-    // current_pose(arr);
-    // std::cout << "current pose: [";
-    // for (int i = 0; i < 6; i++)
-    // {
-    //     arr[i] = TH.pos[i];
-    //     std::cout << arr[i] << (i < 5 ? ", " : "");
-    // }
-    // std::cout << "]" << std::endl;
-    logout();
+    keyboard_controller(0, 0);
+
+    if(Exit_Can())
+    {
+        cout<<"退出CAN成功"<<endl;
+    }
+    
     return 0;
 }

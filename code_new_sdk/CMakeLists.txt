@@ -36,25 +36,24 @@ message(STATUS "ONNX Runtime library: ${ONNXRT_LIB}")
 
 # 添加可执行文件并链接库
 add_executable(move_sov src/main.cpp)
+add_executable(keyboard_controll src/keyboard_controll.cpp)
 add_executable(move_origin src/move_origin.cpp)
-add_executable(robot_server src/server_main.cpp src/robot_server.cpp)
+add_executable(socket_robot 
+    src/socket_robot.cpp 
+    src/socket_server.cpp)
 add_executable(read_onnx_demo src/read_onnx.cpp)
 add_executable(test_policy src/test_policy.cpp)
+add_executable(onnx_socket_robot
+    src/onnx_socket_robot.cpp 
+    src/socket_server.cpp)
 
 # 链接通用库
 target_link_libraries(move_sov ${COMMON_LIBS})
 target_link_libraries(move_origin ${COMMON_LIBS})
-target_link_libraries(robot_server ${COMMON_LIBS})
+target_link_libraries(socket_robot ${COMMON_LIBS})
+target_link_libraries(keyboard_controll ${COMMON_LIBS})
 
 # 链接ONNX Runtime库
 target_link_libraries(read_onnx_demo ${COMMON_LIBS} ${ONNXRT_LIB})
 target_link_libraries(test_policy ${COMMON_LIBS} ${ONNXRT_LIB})
-
-# 安装规则（可选）
-install(TARGETS 
-    move_sov 
-    move_origin 
-    robot_server 
-    read_onnx_demo
-    test_policy
-    DESTINATION bin)
+target_link_libraries(onnx_socket_robot ${COMMON_LIBS} ${ONNXRT_LIB})
