@@ -1,6 +1,6 @@
 /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles/move_sov.dir
 /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles/move_origin.dir
-/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles/robot_server.dir
+/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles/socket_robot.dir
 /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles/read_onnx_demo.dir
 /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles/test_policy.dir
 /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles/edit_cache.dir

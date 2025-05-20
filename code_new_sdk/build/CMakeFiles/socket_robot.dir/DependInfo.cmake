@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/src/robot_server.cpp" "CMakeFiles/robot_server.dir/src/robot_server.cpp.o" "gcc" "CMakeFiles/robot_server.dir/src/robot_server.cpp.o.d"
-  "/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/src/server_main.cpp" "CMakeFiles/robot_server.dir/src/server_main.cpp.o" "gcc" "CMakeFiles/robot_server.dir/src/server_main.cpp.o.d"
+  "/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/src/socket_robot.cpp" "CMakeFiles/socket_robot.dir/src/socket_robot.cpp.o" "gcc" "CMakeFiles/socket_robot.dir/src/socket_robot.cpp.o.d"
+  "/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/src/socket_server.cpp" "CMakeFiles/socket_robot.dir/src/socket_server.cpp.o" "gcc" "CMakeFiles/socket_robot.dir/src/socket_server.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

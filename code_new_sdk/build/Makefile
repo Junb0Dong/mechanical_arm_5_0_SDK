@@ -188,17 +188,17 @@ move_origin/fast:
 .PHONY : move_origin/fast
 
 #=============================================================================
-# Target rules for targets named robot_server
+# Target rules for targets named socket_robot
 
 # Build rule for target.
-robot_server: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 robot_server
-.PHONY : robot_server
+socket_robot: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 socket_robot
+.PHONY : socket_robot
 
 # fast build rule for target.
-robot_server/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_server.dir/build.make CMakeFiles/robot_server.dir/build
-.PHONY : robot_server/fast
+socket_robot/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/socket_robot.dir/build.make CMakeFiles/socket_robot.dir/build
+.PHONY : socket_robot/fast
 
 #=============================================================================
 # Target rules for targets named read_onnx_demo
@@ -298,53 +298,53 @@ src/read_onnx.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/read_onnx_demo.dir/build.make CMakeFiles/read_onnx_demo.dir/src/read_onnx.cpp.s
 .PHONY : src/read_onnx.cpp.s
 
-src/robot_server.o: src/robot_server.cpp.o
-.PHONY : src/robot_server.o
+src/socket_robot.o: src/socket_robot.cpp.o
+.PHONY : src/socket_robot.o
 
 # target to build an object file
-src/robot_server.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_server.dir/build.make CMakeFiles/robot_server.dir/src/robot_server.cpp.o
-.PHONY : src/robot_server.cpp.o
+src/socket_robot.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/socket_robot.dir/build.make CMakeFiles/socket_robot.dir/src/socket_robot.cpp.o
+.PHONY : src/socket_robot.cpp.o
 
-src/robot_server.i: src/robot_server.cpp.i
-.PHONY : src/robot_server.i
+src/socket_robot.i: src/socket_robot.cpp.i
+.PHONY : src/socket_robot.i
 
 # target to preprocess a source file
-src/robot_server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_server.dir/build.make CMakeFiles/robot_server.dir/src/robot_server.cpp.i
-.PHONY : src/robot_server.cpp.i
+src/socket_robot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/socket_robot.dir/build.make CMakeFiles/socket_robot.dir/src/socket_robot.cpp.i
+.PHONY : src/socket_robot.cpp.i
 
-src/robot_server.s: src/robot_server.cpp.s
-.PHONY : src/robot_server.s
+src/socket_robot.s: src/socket_robot.cpp.s
+.PHONY : src/socket_robot.s
 
 # target to generate assembly for a file
-src/robot_server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_server.dir/build.make CMakeFiles/robot_server.dir/src/robot_server.cpp.s
-.PHONY : src/robot_server.cpp.s
+src/socket_robot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/socket_robot.dir/build.make CMakeFiles/socket_robot.dir/src/socket_robot.cpp.s
+.PHONY : src/socket_robot.cpp.s
 
-src/server_main.o: src/server_main.cpp.o
-.PHONY : src/server_main.o
+src/socket_server.o: src/socket_server.cpp.o
+.PHONY : src/socket_server.o
 
 # target to build an object file
-src/server_main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_server.dir/build.make CMakeFiles/robot_server.dir/src/server_main.cpp.o
-.PHONY : src/server_main.cpp.o
+src/socket_server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/socket_robot.dir/build.make CMakeFiles/socket_robot.dir/src/socket_server.cpp.o
+.PHONY : src/socket_server.cpp.o
 
-src/server_main.i: src/server_main.cpp.i
-.PHONY : src/server_main.i
+src/socket_server.i: src/socket_server.cpp.i
+.PHONY : src/socket_server.i
 
 # target to preprocess a source file
-src/server_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_server.dir/build.make CMakeFiles/robot_server.dir/src/server_main.cpp.i
-.PHONY : src/server_main.cpp.i
+src/socket_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/socket_robot.dir/build.make CMakeFiles/socket_robot.dir/src/socket_server.cpp.i
+.PHONY : src/socket_server.cpp.i
 
-src/server_main.s: src/server_main.cpp.s
-.PHONY : src/server_main.s
+src/socket_server.s: src/socket_server.cpp.s
+.PHONY : src/socket_server.s
 
 # target to generate assembly for a file
-src/server_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_server.dir/build.make CMakeFiles/robot_server.dir/src/server_main.cpp.s
-.PHONY : src/server_main.cpp.s
+src/socket_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/socket_robot.dir/build.make CMakeFiles/socket_robot.dir/src/socket_server.cpp.s
+.PHONY : src/socket_server.cpp.s
 
 src/test_policy.o: src/test_policy.cpp.o
 .PHONY : src/test_policy.o
@@ -385,7 +385,7 @@ help:
 	@echo "... move_origin"
 	@echo "... move_sov"
 	@echo "... read_onnx_demo"
-	@echo "... robot_server"
+	@echo "... socket_robot"
 	@echo "... test_policy"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
@@ -396,12 +396,12 @@ help:
 	@echo "... src/read_onnx.o"
 	@echo "... src/read_onnx.i"
 	@echo "... src/read_onnx.s"
-	@echo "... src/robot_server.o"
-	@echo "... src/robot_server.i"
-	@echo "... src/robot_server.s"
-	@echo "... src/server_main.o"
-	@echo "... src/server_main.i"
-	@echo "... src/server_main.s"
+	@echo "... src/socket_robot.o"
+	@echo "... src/socket_robot.i"
+	@echo "... src/socket_robot.s"
+	@echo "... src/socket_server.o"
+	@echo "... src/socket_server.i"
+	@echo "... src/socket_server.s"
 	@echo "... src/test_policy.o"
 	@echo "... src/test_policy.i"
 	@echo "... src/test_policy.s"

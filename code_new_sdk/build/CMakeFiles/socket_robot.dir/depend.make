@@ -1,2 +1,2 @@
-# Empty dependencies file for robot_server.
+# Empty dependencies file for socket_robot.
 # This may be replaced when dependencies are built.

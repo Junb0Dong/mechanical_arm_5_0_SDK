@@ -1,7 +1,7 @@
-CMakeFiles/robot_server.dir/src/robot_server.cpp.o: \
- /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/src/robot_server.cpp \
+CMakeFiles/socket_robot.dir/src/socket_robot.cpp.o: \
+ /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/src/socket_robot.cpp \
  /usr/include/stdc-predef.h \
- /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/src/robot_server.h \
+ /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/src/socket_server.h \
  /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall CMakeFiles/socket_robot.dir/src/socket_robot.cpp.o CMakeFiles/socket_robot.dir/src/socket_server.cpp.o -o socket_robot  -lpython3.10 -lcontrolcan -lmylibti5 
