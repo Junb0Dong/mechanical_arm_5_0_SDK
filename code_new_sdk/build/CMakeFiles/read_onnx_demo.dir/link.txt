@@ -1,1 +1,1 @@
-/usr/bin/c++  -Wall CMakeFiles/read_onnx_demo.dir/src/read_onnx.cpp.o -o read_onnx_demo  -Wl,-rpath,/usr/local/lib: -lpython3.10 -lcontrolcan -lmylibti5 /usr/local/lib/libonnxruntime.so 
+/usr/bin/c++  -Wall CMakeFiles/read_onnx_demo.dir/src/read_onnx.cpp.o -o read_onnx_demo  -Wl,-rpath,/usr/local/lib -lpython3.10 -lcontrolcan -lmylibti5 /usr/local/lib/libonnxruntime.so 

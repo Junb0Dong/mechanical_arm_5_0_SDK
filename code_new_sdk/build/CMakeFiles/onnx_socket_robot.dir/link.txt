@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall CMakeFiles/onnx_socket_robot.dir/src/onnx_socket_robot.cpp.o CMakeFiles/onnx_socket_robot.dir/src/socket_server.cpp.o -o onnx_socket_robot  -Wl,-rpath,/usr/local/lib -lpython3.10 -lcontrolcan -lmylibti5 /usr/local/lib/libonnxruntime.so 

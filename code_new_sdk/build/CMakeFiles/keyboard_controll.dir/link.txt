@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall CMakeFiles/keyboard_controll.dir/src/keyboard_controll.cpp.o -o keyboard_controll  -lpython3.10 -lcontrolcan -lmylibti5 

@@ -85,51 +85,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/home/ti5/cmake-3.28.5-linux-x86_64/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/home/ti5/cmake-3.28.5-linux-x86_64/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/home/ti5/cmake-3.28.5-linux-x86_64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/home/ti5/cmake-3.28.5-linux-x86_64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/home/ti5/cmake-3.28.5-linux-x86_64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/home/ti5/cmake-3.28.5-linux-x86_64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build//CMakeFiles/progress.marks
@@ -173,6 +128,19 @@ move_sov: cmake_check_build_system
 move_sov/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/move_sov.dir/build.make CMakeFiles/move_sov.dir/build
 .PHONY : move_sov/fast
+
+#=============================================================================
+# Target rules for targets named keyboard_controll
+
+# Build rule for target.
+keyboard_controll: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 keyboard_controll
+.PHONY : keyboard_controll
+
+# fast build rule for target.
+keyboard_controll/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/keyboard_controll.dir/build.make CMakeFiles/keyboard_controll.dir/build
+.PHONY : keyboard_controll/fast
 
 #=============================================================================
 # Target rules for targets named move_origin
@@ -226,6 +194,43 @@ test_policy/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_policy.dir/build.make CMakeFiles/test_policy.dir/build
 .PHONY : test_policy/fast
 
+#=============================================================================
+# Target rules for targets named onnx_socket_robot
+
+# Build rule for target.
+onnx_socket_robot: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 onnx_socket_robot
+.PHONY : onnx_socket_robot
+
+# fast build rule for target.
+onnx_socket_robot/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/onnx_socket_robot.dir/build.make CMakeFiles/onnx_socket_robot.dir/build
+.PHONY : onnx_socket_robot/fast
+
+src/keyboard_controll.o: src/keyboard_controll.cpp.o
+.PHONY : src/keyboard_controll.o
+
+# target to build an object file
+src/keyboard_controll.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/keyboard_controll.dir/build.make CMakeFiles/keyboard_controll.dir/src/keyboard_controll.cpp.o
+.PHONY : src/keyboard_controll.cpp.o
+
+src/keyboard_controll.i: src/keyboard_controll.cpp.i
+.PHONY : src/keyboard_controll.i
+
+# target to preprocess a source file
+src/keyboard_controll.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/keyboard_controll.dir/build.make CMakeFiles/keyboard_controll.dir/src/keyboard_controll.cpp.i
+.PHONY : src/keyboard_controll.cpp.i
+
+src/keyboard_controll.s: src/keyboard_controll.cpp.s
+.PHONY : src/keyboard_controll.s
+
+# target to generate assembly for a file
+src/keyboard_controll.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/keyboard_controll.dir/build.make CMakeFiles/keyboard_controll.dir/src/keyboard_controll.cpp.s
+.PHONY : src/keyboard_controll.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -273,6 +278,30 @@ src/move_origin.s: src/move_origin.cpp.s
 src/move_origin.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/move_origin.dir/build.make CMakeFiles/move_origin.dir/src/move_origin.cpp.s
 .PHONY : src/move_origin.cpp.s
+
+src/onnx_socket_robot.o: src/onnx_socket_robot.cpp.o
+.PHONY : src/onnx_socket_robot.o
+
+# target to build an object file
+src/onnx_socket_robot.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/onnx_socket_robot.dir/build.make CMakeFiles/onnx_socket_robot.dir/src/onnx_socket_robot.cpp.o
+.PHONY : src/onnx_socket_robot.cpp.o
+
+src/onnx_socket_robot.i: src/onnx_socket_robot.cpp.i
+.PHONY : src/onnx_socket_robot.i
+
+# target to preprocess a source file
+src/onnx_socket_robot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/onnx_socket_robot.dir/build.make CMakeFiles/onnx_socket_robot.dir/src/onnx_socket_robot.cpp.i
+.PHONY : src/onnx_socket_robot.cpp.i
+
+src/onnx_socket_robot.s: src/onnx_socket_robot.cpp.s
+.PHONY : src/onnx_socket_robot.s
+
+# target to generate assembly for a file
+src/onnx_socket_robot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/onnx_socket_robot.dir/build.make CMakeFiles/onnx_socket_robot.dir/src/onnx_socket_robot.cpp.s
+.PHONY : src/onnx_socket_robot.cpp.s
 
 src/read_onnx.o: src/read_onnx.cpp.o
 .PHONY : src/read_onnx.o
@@ -328,6 +357,7 @@ src/socket_server.o: src/socket_server.cpp.o
 # target to build an object file
 src/socket_server.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/socket_robot.dir/build.make CMakeFiles/socket_robot.dir/src/socket_server.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/onnx_socket_robot.dir/build.make CMakeFiles/onnx_socket_robot.dir/src/socket_server.cpp.o
 .PHONY : src/socket_server.cpp.o
 
 src/socket_server.i: src/socket_server.cpp.i
@@ -336,6 +366,7 @@ src/socket_server.i: src/socket_server.cpp.i
 # target to preprocess a source file
 src/socket_server.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/socket_robot.dir/build.make CMakeFiles/socket_robot.dir/src/socket_server.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/onnx_socket_robot.dir/build.make CMakeFiles/onnx_socket_robot.dir/src/socket_server.cpp.i
 .PHONY : src/socket_server.cpp.i
 
 src/socket_server.s: src/socket_server.cpp.s
@@ -344,6 +375,7 @@ src/socket_server.s: src/socket_server.cpp.s
 # target to generate assembly for a file
 src/socket_server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/socket_robot.dir/build.make CMakeFiles/socket_robot.dir/src/socket_server.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/onnx_socket_robot.dir/build.make CMakeFiles/onnx_socket_robot.dir/src/socket_server.cpp.s
 .PHONY : src/socket_server.cpp.s
 
 src/test_policy.o: src/test_policy.cpp.o
@@ -377,22 +409,26 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... keyboard_controll"
 	@echo "... move_origin"
 	@echo "... move_sov"
+	@echo "... onnx_socket_robot"
 	@echo "... read_onnx_demo"
 	@echo "... socket_robot"
 	@echo "... test_policy"
+	@echo "... src/keyboard_controll.o"
+	@echo "... src/keyboard_controll.i"
+	@echo "... src/keyboard_controll.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/move_origin.o"
 	@echo "... src/move_origin.i"
 	@echo "... src/move_origin.s"
+	@echo "... src/onnx_socket_robot.o"
+	@echo "... src/onnx_socket_robot.i"
+	@echo "... src/onnx_socket_robot.s"
 	@echo "... src/read_onnx.o"
 	@echo "... src/read_onnx.i"
 	@echo "... src/read_onnx.s"

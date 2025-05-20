@@ -1,11 +1,9 @@
 /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles/move_sov.dir
+/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles/keyboard_controll.dir
 /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles/move_origin.dir
 /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles/socket_robot.dir
 /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles/read_onnx_demo.dir
 /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles/test_policy.dir
+/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles/onnx_socket_robot.dir
 /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles/edit_cache.dir
 /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles/rebuild_cache.dir
-/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles/list_install_components.dir
-/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles/install.dir
-/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles/install/local.dir
-/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles/install/strip.dir

@@ -64,10 +64,12 @@ CMAKE_BINARY_DIR = /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build
 
 # The main recursive "all" target.
 all: CMakeFiles/move_sov.dir/all
+all: CMakeFiles/keyboard_controll.dir/all
 all: CMakeFiles/move_origin.dir/all
 all: CMakeFiles/socket_robot.dir/all
 all: CMakeFiles/read_onnx_demo.dir/all
 all: CMakeFiles/test_policy.dir/all
+all: CMakeFiles/onnx_socket_robot.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -76,10 +78,12 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/move_sov.dir/clean
+clean: CMakeFiles/keyboard_controll.dir/clean
 clean: CMakeFiles/move_origin.dir/clean
 clean: CMakeFiles/socket_robot.dir/clean
 clean: CMakeFiles/read_onnx_demo.dir/clean
 clean: CMakeFiles/test_policy.dir/clean
+clean: CMakeFiles/onnx_socket_robot.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -89,7 +93,7 @@ clean: CMakeFiles/test_policy.dir/clean
 CMakeFiles/move_sov.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/move_sov.dir/build.make CMakeFiles/move_sov.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/move_sov.dir/build.make CMakeFiles/move_sov.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles --progress-num=3,4 "Built target move_sov"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles --progress-num=5,6 "Built target move_sov"
 .PHONY : CMakeFiles/move_sov.dir/all
 
 # Build rule for subdir invocation for target.
@@ -109,13 +113,39 @@ CMakeFiles/move_sov.dir/clean:
 .PHONY : CMakeFiles/move_sov.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/keyboard_controll.dir
+
+# All Build rule for target.
+CMakeFiles/keyboard_controll.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/keyboard_controll.dir/build.make CMakeFiles/keyboard_controll.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/keyboard_controll.dir/build.make CMakeFiles/keyboard_controll.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles --progress-num=1,2 "Built target keyboard_controll"
+.PHONY : CMakeFiles/keyboard_controll.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/keyboard_controll.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/keyboard_controll.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles 0
+.PHONY : CMakeFiles/keyboard_controll.dir/rule
+
+# Convenience name for target.
+keyboard_controll: CMakeFiles/keyboard_controll.dir/rule
+.PHONY : keyboard_controll
+
+# clean rule for target.
+CMakeFiles/keyboard_controll.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/keyboard_controll.dir/build.make CMakeFiles/keyboard_controll.dir/clean
+.PHONY : CMakeFiles/keyboard_controll.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/move_origin.dir
 
 # All Build rule for target.
 CMakeFiles/move_origin.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/move_origin.dir/build.make CMakeFiles/move_origin.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/move_origin.dir/build.make CMakeFiles/move_origin.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles --progress-num=1,2 "Built target move_origin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles --progress-num=3,4 "Built target move_origin"
 .PHONY : CMakeFiles/move_origin.dir/all
 
 # Build rule for subdir invocation for target.
@@ -141,7 +171,7 @@ CMakeFiles/move_origin.dir/clean:
 CMakeFiles/socket_robot.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/socket_robot.dir/build.make CMakeFiles/socket_robot.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/socket_robot.dir/build.make CMakeFiles/socket_robot.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles --progress-num=7,8,9 "Built target socket_robot"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles --progress-num=12,13,14 "Built target socket_robot"
 .PHONY : CMakeFiles/socket_robot.dir/all
 
 # Build rule for subdir invocation for target.
@@ -167,7 +197,7 @@ CMakeFiles/socket_robot.dir/clean:
 CMakeFiles/read_onnx_demo.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/read_onnx_demo.dir/build.make CMakeFiles/read_onnx_demo.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/read_onnx_demo.dir/build.make CMakeFiles/read_onnx_demo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles --progress-num=5,6 "Built target read_onnx_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles --progress-num=10,11 "Built target read_onnx_demo"
 .PHONY : CMakeFiles/read_onnx_demo.dir/all
 
 # Build rule for subdir invocation for target.
@@ -193,7 +223,7 @@ CMakeFiles/read_onnx_demo.dir/clean:
 CMakeFiles/test_policy.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_policy.dir/build.make CMakeFiles/test_policy.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_policy.dir/build.make CMakeFiles/test_policy.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles --progress-num=10,11 "Built target test_policy"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles --progress-num=15,16 "Built target test_policy"
 .PHONY : CMakeFiles/test_policy.dir/all
 
 # Build rule for subdir invocation for target.
@@ -211,6 +241,32 @@ test_policy: CMakeFiles/test_policy.dir/rule
 CMakeFiles/test_policy.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_policy.dir/build.make CMakeFiles/test_policy.dir/clean
 .PHONY : CMakeFiles/test_policy.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/onnx_socket_robot.dir
+
+# All Build rule for target.
+CMakeFiles/onnx_socket_robot.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/onnx_socket_robot.dir/build.make CMakeFiles/onnx_socket_robot.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/onnx_socket_robot.dir/build.make CMakeFiles/onnx_socket_robot.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles --progress-num=7,8,9 "Built target onnx_socket_robot"
+.PHONY : CMakeFiles/onnx_socket_robot.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/onnx_socket_robot.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/onnx_socket_robot.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ti5/mechanical_arm_5_0_SDK/code_new_sdk/build/CMakeFiles 0
+.PHONY : CMakeFiles/onnx_socket_robot.dir/rule
+
+# Convenience name for target.
+onnx_socket_robot: CMakeFiles/onnx_socket_robot.dir/rule
+.PHONY : onnx_socket_robot
+
+# clean rule for target.
+CMakeFiles/onnx_socket_robot.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/onnx_socket_robot.dir/build.make CMakeFiles/onnx_socket_robot.dir/clean
+.PHONY : CMakeFiles/onnx_socket_robot.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
